@@ -36,21 +36,23 @@ const Hero = ({ className }: HeroProps) => {
           Exploring Kotlin Multiplatform and machine learning.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 pb-16 animate-fade-in" style={{ animationDelay: '800ms' }}>
-          <Link
-            to="/projects"
-            className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px]"
-          >
-            View Projects
-            <ArrowRight size={16} />
-          </Link>
-          
-          <Link
-            to="/about"
-            className="px-8 py-3 rounded-lg border border-input bg-background hover:bg-secondary/50 font-medium transition-all transform hover:translate-y-[-2px]"
-          >
-            About Me
-          </Link>
+        <div className="flex flex-col items-center justify-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+            <Link
+              to="/projects"
+              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px]"
+            >
+              View Projects
+              <ArrowRight size={16} />
+            </Link>
+            
+            <Link
+              to="/about"
+              className="px-8 py-3 rounded-lg border border-input bg-background hover:bg-secondary/50 font-medium transition-all transform hover:translate-y-[-2px]"
+            >
+              About Me
+            </Link>
+          </div>
           
           <button
             onClick={scrollToAbout}
