@@ -18,7 +18,7 @@ const Hero = ({ className }: HeroProps) => {
   return (
     <section 
       className={cn(
-        "min-h-[85vh] flex flex-col items-center justify-center text-center px-4",
+        "relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4",
         className
       )}
     >
@@ -56,7 +56,7 @@ const Hero = ({ className }: HeroProps) => {
       
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-10 animate-bounce"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
         aria-label="Scroll to about section"
       >
         <ChevronDown size={24} />
