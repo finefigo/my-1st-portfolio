@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { 
   Code, 
   Smartphone, 
@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 
 const AboutPreview = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Staggered animation on scroll
   useEffect(() => {
@@ -22,6 +24,37 @@ const AboutPreview = () => {
       el.style.transitionDelay = `${index * 100}ms`;
     });
   }, []);
+
+  // Mouse movement effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  // Apply transform to cards based on mouse position
+  useEffect(() => {
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+
+      const cardRect = card.getBoundingClientRect();
+      const cardCenterX = cardRect.left + cardRect.width / 2;
+      const cardCenterY = cardRect.top + cardRect.height / 2;
+      
+      // Calculate distance from mouse to card center (normalized)
+      const distanceX = (mousePosition.x - cardCenterX) / (window.innerWidth / 2);
+      const distanceY = (mousePosition.y - cardCenterY) / (window.innerHeight / 2);
+      
+      // Apply transform with limited rotation (max 5 degrees) and subtle movement
+      card.style.transform = `perspective(1000px) rotateX(${distanceY * -3}deg) rotateY(${distanceX * 3}deg) translateX(${distanceX * 5}px) translateY(${distanceY * 5}px)`;
+    });
+  }, [mousePosition]);
 
   return (
     <section id="about-section" className="py-20 px-4">
@@ -39,7 +72,10 @@ const AboutPreview = () => {
           ref={containerRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          <div className="feature-item highlight-card glass-card animate-on-scroll">
+          <div 
+            ref={(el) => cardsRef.current[0] = el}
+            className="feature-item highlight-card glass-card animate-on-scroll transition-transform duration-200"
+          >
             <Smartphone className="h-10 w-10 mb-4 text-primary" />
             <h3 className="text-xl font-bold mb-2">Android Development</h3>
             <p className="text-muted-foreground mb-4">
@@ -47,7 +83,10 @@ const AboutPreview = () => {
             </p>
           </div>
           
-          <div className="feature-item highlight-card glass-card animate-on-scroll">
+          <div 
+            ref={(el) => cardsRef.current[1] = el}
+            className="feature-item highlight-card glass-card animate-on-scroll transition-transform duration-200"
+          >
             <Code className="h-10 w-10 mb-4 text-primary" />
             <h3 className="text-xl font-bold mb-2">Kotlin Multiplatform</h3>
             <p className="text-muted-foreground mb-4">
@@ -55,7 +94,10 @@ const AboutPreview = () => {
             </p>
           </div>
           
-          <div className="feature-item highlight-card glass-card animate-on-scroll">
+          <div 
+            ref={(el) => cardsRef.current[2] = el}
+            className="feature-item highlight-card glass-card animate-on-scroll transition-transform duration-200"
+          >
             <Award className="h-10 w-10 mb-4 text-primary" />
             <h3 className="text-xl font-bold mb-2">Patents</h3>
             <p className="text-muted-foreground mb-4">
@@ -63,7 +105,10 @@ const AboutPreview = () => {
             </p>
           </div>
           
-          <div className="feature-item highlight-card glass-card animate-on-scroll">
+          <div 
+            ref={(el) => cardsRef.current[3] = el}
+            className="feature-item highlight-card glass-card animate-on-scroll transition-transform duration-200"
+          >
             <Brain className="h-10 w-10 mb-4 text-primary" />
             <h3 className="text-xl font-bold mb-2">AI & ML</h3>
             <p className="text-muted-foreground mb-4">
