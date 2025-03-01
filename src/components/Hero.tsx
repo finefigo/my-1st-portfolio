@@ -36,7 +36,7 @@ const Hero = ({ className }: HeroProps) => {
           Exploring Kotlin Multiplatform and machine learning.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: '800ms' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 pb-16 animate-fade-in" style={{ animationDelay: '800ms' }}>
           <Link
             to="/projects"
             className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px]"
@@ -51,16 +51,16 @@ const Hero = ({ className }: HeroProps) => {
           >
             About Me
           </Link>
+          
+          <button
+            onClick={scrollToAbout}
+            className="mt-8 animate-bounce"
+            aria-label="Scroll to about section"
+          >
+            <ChevronDown size={24} />
+          </button>
         </div>
       </div>
-      
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-        aria-label="Scroll to about section"
-      >
-        <ChevronDown size={24} />
-      </button>
     </section>
   );
 };
