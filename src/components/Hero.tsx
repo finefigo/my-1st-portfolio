@@ -18,7 +18,7 @@ const Hero = ({ className }: HeroProps) => {
   return (
     <section 
       className={cn(
-        "relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4",
+        "min-h-[85vh] flex flex-col items-center justify-center text-center px-4",
         className
       )}
     >
@@ -36,33 +36,31 @@ const Hero = ({ className }: HeroProps) => {
           Exploring Kotlin Multiplatform and machine learning.
         </p>
         
-        <div className="flex flex-col items-center justify-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: '800ms' }}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-            <Link
-              to="/projects"
-              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px]"
-            >
-              View Projects
-              <ArrowRight size={16} />
-            </Link>
-            
-            <Link
-              to="/about"
-              className="px-8 py-3 rounded-lg border border-input bg-background hover:bg-secondary/50 font-medium transition-all transform hover:translate-y-[-2px]"
-            >
-              About Me
-            </Link>
-          </div>
-          
-          <button
-            onClick={scrollToAbout}
-            className="mt-8 animate-bounce"
-            aria-label="Scroll to about section"
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <Link
+            to="/projects"
+            className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px]"
           >
-            <ChevronDown size={24} />
-          </button>
+            View Projects
+            <ArrowRight size={16} />
+          </Link>
+          
+          <Link
+            to="/about"
+            className="px-8 py-3 rounded-lg border border-input bg-background hover:bg-secondary/50 font-medium transition-all transform hover:translate-y-[-2px]"
+          >
+            About Me
+          </Link>
         </div>
       </div>
+      
+      <button
+        onClick={scrollToAbout}
+        className="absolute bottom-10 animate-bounce"
+        aria-label="Scroll to about section"
+      >
+        <ChevronDown size={24} />
+      </button>
     </section>
   );
 };

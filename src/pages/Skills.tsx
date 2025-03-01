@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import Layout from '@/components/Layout';
 import { 
@@ -6,7 +7,7 @@ import {
   Layout as LayoutIcon, 
   GitBranch, 
   Server, 
-  Wrench, 
+  Tool, 
   Clock
 } from 'lucide-react';
 
@@ -79,6 +80,7 @@ const ProcessStep = ({ number, title, description, delay = 0 }: ProcessStepProps
 };
 
 const Skills = () => {
+  // Initialize skill bars animation after mount
   useEffect(() => {
     setTimeout(() => {
       const skillBars = document.querySelectorAll('.bg-primary');
@@ -153,7 +155,7 @@ const Skills = () => {
           />
           
           <SkillCard 
-            icon={<Wrench size={24} />}
+            icon={<Tool size={24} />}
             title="Architecture Patterns"
             skills={[
               { name: "MVVM", level: 85 },
