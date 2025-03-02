@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -7,15 +6,15 @@ const LogoSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
-  // This would be replaced with your actual profile image
-  const placeholderImage = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
+  // Use a development-themed image from Unsplash
+  const devImage = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6";
 
   useEffect(() => {
-    // Simulate loading the image
+    // Load the image
     const img = new Image();
-    img.src = placeholderImage;
+    img.src = devImage;
     img.onload = () => {
-      setProfileImage(placeholderImage);
+      setProfileImage(devImage);
       setTimeout(() => setLoaded(true), 300);
     };
   }, []);
@@ -53,7 +52,7 @@ const LogoSection = () => {
                 {profileImage && (
                   <img
                     src={profileImage}
-                    alt="Your profile"
+                    alt="Programming and development"
                     className={cn(
                       "w-full h-full object-cover transition-opacity duration-700 filter",
                       loaded ? "opacity-100" : "opacity-0"
@@ -63,7 +62,7 @@ const LogoSection = () => {
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                  <p className="text-white text-sm font-medium">Your Name</p>
+                  <p className="text-white text-sm font-medium">Android Developer</p>
                 </div>
               </div>
             </div>
