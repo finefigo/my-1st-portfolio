@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -6,15 +7,15 @@ const LogoSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
-  // Use a development-themed image from Unsplash
-  const devImage = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6";
+  // Use the user's profile image
+  const profileImagePath = "/lovable-uploads/e9850768-e314-49a4-b6ee-3459f0915cb5.png";
 
   useEffect(() => {
     // Load the image
     const img = new Image();
-    img.src = devImage;
+    img.src = profileImagePath;
     img.onload = () => {
-      setProfileImage(devImage);
+      setProfileImage(profileImagePath);
       setTimeout(() => setLoaded(true), 300);
     };
   }, []);
@@ -52,7 +53,7 @@ const LogoSection = () => {
                 {profileImage && (
                   <img
                     src={profileImage}
-                    alt="Programming and development"
+                    alt="Profile image"
                     className={cn(
                       "w-full h-full object-cover transition-opacity duration-700 filter",
                       loaded ? "opacity-100" : "opacity-0"
