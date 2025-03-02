@@ -39,12 +39,12 @@ const LogoSection = () => {
               <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-lg transform rotate-6"></div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/60 rounded-lg transform -rotate-6"></div>
               
-              {/* Image container with blur loading effect */}
+              {/* Image container with fade loading effect (removed animation) */}
               <div className="relative w-full h-full rounded-lg overflow-hidden">
-                {/* Blur placeholder */}
+                {/* Static placeholder - removed animate-pulse */}
                 <div 
                   className={cn(
-                    "absolute inset-0 bg-muted animate-pulse transition-opacity duration-500",
+                    "absolute inset-0 bg-muted transition-opacity duration-500",
                     loaded ? "opacity-0" : "opacity-100"
                   )}
                 ></div>
