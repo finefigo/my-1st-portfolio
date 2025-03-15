@@ -79,7 +79,7 @@ const Layout = ({
                 <span className="font-display font-bold text-lg text-gray-900"></span>
               </div>
             </div>
-            <span className="font-display font-bold text-xl">Portfolio</span>
+            <span className="font-display font-bold text-xl">Faisal Imtiaz</span>
           </Link>
 
           {/* Desktop Navigation */}
