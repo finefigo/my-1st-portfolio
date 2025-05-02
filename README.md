@@ -1,3 +1,4 @@
+
 # Welcome to my 1st  portfolio
 
 ## Project info
@@ -55,10 +56,11 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Published Portfolio
 
-Simply open [Lovable](https://lovable.dev/projects/31ce8612-4483-44ac-b848-58907d993977) and click on Share -> Publish.
+Visit my portfolio website: [My Portfolio](https://your-portfolio-url-here.com)
 
-## I want to use a custom domain - is that possible?
+## Custom Domain Information
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
