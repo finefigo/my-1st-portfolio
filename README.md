@@ -58,7 +58,7 @@ This project is built with .
 
 ## Published Portfolio
 
-Visit my portfolio website: [My Portfolio](https://your-portfolio-url-here.com)
+Visit my portfolio website: [My Portfolio](https://my-1st-portfolio.lovable.app/)
 
 ## Custom Domain Information
 
