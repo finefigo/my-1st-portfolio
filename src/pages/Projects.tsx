@@ -18,64 +18,53 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "FitTrack",
-    description: "A fitness tracking app built with Kotlin that helps users monitor workouts and progress.",
-    longDescription: "FitTrack is a comprehensive fitness tracking application built with Kotlin for Android. It leverages Room Database for local storage, follows MVVM architecture, and includes real-time progress tracking with intuitive visualization. The app features customizable workout plans, achievement badges, and social sharing capabilities.",
-    tags: ["Kotlin", "Room DB", "MVVM", "Material Design"],
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    githubUrl: "#",
+    title: "Indian Sign Language Converter",
+    description: "A tool that converts Indian Sign Language to text and speech for better accessibility.",
+    longDescription: "This project uses computer vision and machine learning to recognize Indian Sign Language gestures through a camera and convert them into text and speech in real-time. The system helps bridge communication gaps between the deaf/mute community and others. Built with TensorFlow and OpenCV, it features a user-friendly interface, high accuracy recognition, and multilingual support.",
+    tags: ["AI/ML", "Accessibility", "Computer Vision", "TensorFlow", "OpenCV"],
+    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    githubUrl: "https://github.com/finefigo",
     videoUrl: "#"
   },
   {
     id: 2,
-    title: "WeatherNow",
-    description: "Real-time weather application with location tracking and forecast capabilities.",
-    longDescription: "WeatherNow delivers accurate weather information with an intuitive interface. Built with Java, it integrates multiple weather APIs through Retrofit, implements location tracking with Google Maps API, and provides hourly and 7-day forecasts. The app includes severe weather alerts and customizable widgets for the home screen.",
-    tags: ["Java", "Retrofit", "Google Maps API", "OpenWeather API"],
+    title: "AI Smart Newsletter Tool",
+    description: "Platform that automates newsletter creation with AI-powered content suggestions.",
+    longDescription: "This AI-powered newsletter creation platform streamlines the process of generating engaging newsletters. It features automatic content curation based on user interests, AI-generated summaries of articles, smart layout optimization, and performance analytics. The system learns from user interactions to continuously improve content recommendations.",
+    tags: ["AI", "Content Generation", "Web App", "Natural Language Processing"],
     imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    githubUrl: "#",
-    liveUrl: "#",
-    videoUrl: "#"
+    githubUrl: "https://github.com/finefigo",
+    liveUrl: "#"
   },
   {
     id: 3,
-    title: "TaskFlow",
-    description: "Productivity app with Kotlin Multiplatform that works across Android and iOS.",
-    longDescription: "TaskFlow is a cross-platform productivity application built with Kotlin Multiplatform. It features a clean, minimalist UI with Jetpack Compose for Android and SwiftUI for iOS, shared business logic across platforms, and efficient data synchronization with SQLDelight. The app includes task categorization, priorities, reminders, and detailed analytics.",
-    tags: ["KMP", "Compose", "SQLDelight", "Ktor"],
-    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    githubUrl: "#",
+    title: "Learning Management System",
+    description: "A comprehensive LMS app for educational institutions with modern features.",
+    longDescription: "This Learning Management System is designed to enhance the educational experience for both students and educators. It includes features like interactive course materials, assignment submission and grading, progress tracking, discussion forums, and integrated video conferencing. The system is built with a responsive design for seamless use across devices.",
+    tags: ["Education", "Mobile App", "UX/UI", "React Native"],
+    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    githubUrl: "https://github.com/finefigo",
     videoUrl: "#"
   },
   {
     id: 4,
-    title: "MediRemind",
-    description: "Medication reminder app with a focus on elderly users and accessibility.",
-    longDescription: "MediRemind is designed to help users, particularly seniors, manage their medications effectively. Built with accessibility in mind, it features large text, high contrast UI, voice reminders, and simple navigation. The app includes medication tracking, refill reminders, and an emergency contact system.",
-    tags: ["Java", "Accessibility", "Local Notifications", "SQLite"],
+    title: "Weather App",
+    description: "A weather application with clean UI/UX and real-time forecasts.",
+    longDescription: "This weather app provides users with accurate, real-time weather information in a clean and intuitive interface. It features current conditions, hourly and 7-day forecasts, severe weather alerts, location-based services, and interactive maps. The design emphasizes visual clarity and ease of use with animated weather icons and smooth transitions.",
+    tags: ["Mobile App", "API Integration", "UI/UX", "React Native"],
     imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    githubUrl: "#",
-    videoUrl: "#"
-  },
-  {
-    id: 5,
-    title: "CryptoTracker",
-    description: "Real-time cryptocurrency tracking app with price alerts and portfolio management.",
-    longDescription: "CryptoTracker allows users to monitor cryptocurrency markets in real-time. Built with Kotlin, it implements MVVM architecture, integrates multiple crypto APIs, and provides detailed market analytics. Features include price alerts, portfolio tracking, transaction history, and predictive indicators.",
-    tags: ["Kotlin", "Retrofit", "RxJava", "MPAndroidChart"],
-    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    githubUrl: "#",
+    githubUrl: "https://github.com/finefigo",
     liveUrl: "#"
   },
   {
-    id: 6,
-    title: "SmartHome",
-    description: "IoT application for controlling smart home devices from your phone.",
-    longDescription: "SmartHome provides a centralized control interface for various IoT devices. Built with Kotlin, it implements a modular architecture for easy device integration, features voice commands, scheduled operations, and energy usage tracking. The app includes scene creation, remote access, and a comprehensive dashboard.",
-    tags: ["Kotlin", "Bluetooth LE", "MQTT", "Dagger Hilt"],
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    githubUrl: "#",
-    videoUrl: "#"
+    id: 5,
+    title: "Portfolio Website",
+    description: "Personal portfolio website showcasing skills, projects, and achievements.",
+    longDescription: "This portfolio website serves as a digital showcase of my work, skills, and professional journey. Built with modern web technologies, it features smooth animations, responsive design, and interactive elements. The site includes sections for projects, skills, patents, and contact information, with a focus on user experience and visual appeal.",
+    tags: ["Web Development", "React", "Framer Motion", "Tailwind CSS"],
+    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    githubUrl: "https://github.com/finefigo",
+    liveUrl: "#"
   },
 ];
 
@@ -127,7 +116,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </div>
           <div 
-            className="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
           ></div>
         </button>
       </div>
@@ -229,7 +218,7 @@ const ProjectModal = ({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-primary-foreground hover:opacity-90 transition-colors"
               >
                 <ExternalLink size={18} />
                 <span>Live Demo</span>
@@ -270,7 +259,7 @@ const Projects = () => {
             My <span className="title-gradient">Projects</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my Android development journey and innovations
+            A showcase of my work in AI/ML, AR development, and tech solutions
           </p>
         </div>
         
@@ -280,18 +269,18 @@ const Projects = () => {
               <button
                 onClick={() => setFilter('all')}
                 className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-                  filter === 'all' ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
+                  filter === 'all' ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white' : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >
                 All Projects
               </button>
               
-              {['Kotlin', 'Java', 'KMP', 'MVVM'].map(tag => (
+              {['AI/ML', 'Accessibility', 'Mobile App', 'Web App', 'Education'].map(tag => (
                 <button
                   key={tag}
                   onClick={() => setFilter(tag)}
                   className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-                    filter === tag ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
+                    filter === tag ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white' : 'bg-secondary hover:bg-secondary/80'
                   }`}
                 >
                   {tag}
@@ -326,7 +315,7 @@ const Projects = () => {
                   setFilter('all');
                   setSearchQuery('');
                 }}
-                className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-lg"
+                className="mt-4 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg"
               >
                 Reset Filters
               </button>

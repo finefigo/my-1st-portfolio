@@ -61,25 +61,25 @@ const Hero = ({
   return (
     <section className={cn("relative min-h-[90vh] flex items-center justify-center text-center px-4 overflow-hidden", className)}>
       {/* Enhanced colorful gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-400 via-blue-300 to-pink-400 dark:from-purple-900 dark:via-blue-800 dark:to-pink-900"></div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500 via-blue-400 to-pink-500 dark:from-purple-900 dark:via-blue-800 dark:to-pink-900"></div>
       
       {/* Animated floating shapes */}
       <div className="absolute inset-0 -z-5 overflow-hidden">
         <motion.div 
           initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.6 }}
+          animate={{ x: 0, opacity: 0.7 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute top-[10%] left-[10%] w-64 h-64 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 blur-3xl"
         />
         <motion.div 
           initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.6 }}
+          animate={{ x: 0, opacity: 0.7 }}
           transition={{ duration: 1, delay: 0.4 }}
           className="absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 blur-3xl"
         />
         <motion.div 
           initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 0.6 }}
+          animate={{ y: 0, opacity: 0.7 }}
           transition={{ duration: 1, delay: 0.6 }}
           className="absolute bottom-[20%] left-[20%] w-72 h-72 rounded-full bg-gradient-to-r from-pink-500 to-rose-400 blur-3xl"
         />
@@ -88,19 +88,19 @@ const Hero = ({
         <motion.div 
           variants={floatingShapesVariants}
           animate="animate"
-          className="absolute top-[15%] right-[20%] w-32 h-32 rounded-full bg-gradient-to-r from-yellow-400 to-amber-300 opacity-30 blur-2xl"
+          className="absolute top-[15%] right-[20%] w-32 h-32 rounded-full bg-gradient-to-r from-yellow-400 to-amber-300 opacity-40 blur-2xl"
         />
         <motion.div 
           variants={floatingShapesVariants}
           animate="animate"
           transition={{ delay: 1 }}
-          className="absolute top-[60%] right-[30%] w-24 h-24 rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 opacity-30 blur-2xl"
+          className="absolute top-[60%] right-[30%] w-24 h-24 rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 opacity-40 blur-2xl"
         />
         <motion.div 
           variants={floatingShapesVariants}
           animate="animate"
           transition={{ delay: 1.5 }}
-          className="absolute top-[40%] left-[15%] w-36 h-36 rounded-full bg-gradient-to-r from-red-400 to-orange-300 opacity-30 blur-2xl"
+          className="absolute top-[40%] left-[15%] w-36 h-36 rounded-full bg-gradient-to-r from-red-400 to-orange-300 opacity-40 blur-2xl"
         />
       </div>
 
@@ -119,7 +119,7 @@ const Hero = ({
           >
             <div className="flex items-center gap-2">
               <Star size={14} className="text-yellow-300 animate-pulse" />
-              <span>2nd year Engineering Student</span>
+              <span>2nd year Engineering Student at JIS College</span>
             </div>
           </motion.div>
           
@@ -128,7 +128,7 @@ const Hero = ({
             className="text-4xl md:text-6xl font-display font-bold leading-tight text-left"
             variants={itemVariants}
           >
-            Creating <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-text-gradient font-extrabold">intuitive</span> mobile experiences
+            Hi, I'm <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-text-gradient font-extrabold">Faisal Imtiaz</span>
           </motion.h1>
           
           {/* Description */}
@@ -136,8 +136,8 @@ const Hero = ({
             className="text-xl text-white/90 dark:text-white/80 max-w-2xl text-left"
             variants={itemVariants}
           >
-            Beginner Android developer specializing in XML, Java, and Kotlin.
-            <br className="hidden sm:inline" /> Exploring Kotlin Multiplatform and machine learning.
+            An AI/ML enthusiast and AR developer passionate about building
+            <br className="hidden sm:inline" /> impactful tech solutions and creating user-focused experiences.
           </motion.p>
           
           {/* CTA buttons */}
@@ -179,7 +179,7 @@ const Hero = ({
             <motion.div 
               whileHover={{ y: -5, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="text-center p-4 rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-indigo-500/30 to-indigo-800/30 backdrop-blur-md border border-white/20 shadow-xl"
             >
               <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">10+</div>
               <div className="text-sm text-white/80">Projects</div>
@@ -188,19 +188,19 @@ const Hero = ({
             <motion.div 
               whileHover={{ y: -5, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-800/30 backdrop-blur-md border border-white/20 shadow-xl"
             >
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">2</div>
-              <div className="text-sm text-white/80">Years Experience</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">4</div>
+              <div className="text-sm text-white/80">Patents</div>
             </motion.div>
             
             <motion.div 
               whileHover={{ y: -5, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="text-center p-4 rounded-lg bg-gradient-to-br from-pink-500/20 to-red-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-pink-500/30 to-red-800/30 backdrop-blur-md border border-white/20 shadow-xl"
             >
-              <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">3</div>
-              <div className="text-sm text-white/80">Technologies</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">2</div>
+              <div className="text-sm text-white/80">Tech Fest Wins</div>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -214,10 +214,10 @@ const Hero = ({
         >
           <div className="relative">
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-pink-500/50 rounded-full blur-3xl transform scale-110"
+              className="absolute inset-0 bg-gradient-to-tr from-indigo-500/70 to-pink-500/70 rounded-full blur-3xl transform scale-110"
               animate={{
                 scale: [1.1, 1.2, 1.1],
-                opacity: [0.5, 0.7, 0.5],
+                opacity: [0.6, 0.8, 0.6],
               }}
               transition={{ duration: 8, repeat: Infinity }}
             ></motion.div>
@@ -228,7 +228,7 @@ const Hero = ({
             >
               <img 
                 src="/lovable-uploads/e9850768-e314-49a4-b6ee-3459f0915cb5.png" 
-                alt="Developer Portrait" 
+                alt="Faisal Imtiaz" 
                 className="relative z-10 w-80 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white/20"
               />
             </motion.div>

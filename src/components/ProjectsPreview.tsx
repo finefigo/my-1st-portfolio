@@ -18,26 +18,26 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "FitTrack",
-    description: "A fitness tracking app built with Kotlin that helps users monitor workouts and progress.",
-    tags: ["Kotlin", "Room DB", "MVVM"],
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    title: "Indian Sign Language Converter",
+    description: "A tool that converts Indian Sign Language to text and speech for better accessibility.",
+    tags: ["AI/ML", "Accessibility", "Image Recognition"],
+    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
     color: "from-purple-500 to-indigo-500"
   },
   {
     id: 2,
-    title: "WeatherNow",
-    description: "Real-time weather application with location tracking and forecast capabilities.",
-    tags: ["Java", "Retrofit", "Google Maps API"],
+    title: "AI Smart Newsletter Tool",
+    description: "Platform that automates newsletter creation with AI-powered content suggestions.",
+    tags: ["AI", "Content Generation", "Web App"],
     imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     color: "from-blue-500 to-cyan-500"
   },
   {
     id: 3,
-    title: "TaskFlow",
-    description: "Productivity app with Kotlin Multiplatform that works across Android and iOS.",
-    tags: ["KMP", "Compose", "SQLDelight"],
-    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    title: "Learning Management System",
+    description: "A comprehensive LMS app for educational institutions with modern features.",
+    tags: ["Education", "Mobile App", "UX/UI"],
+    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     color: "from-pink-500 to-rose-500"
   },
 ];
@@ -143,21 +143,21 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const ProjectsPreview = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50 dark:from-slate-950 dark:to-slate-900 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-b from-purple-100 to-indigo-50 dark:from-slate-900 dark:to-indigo-950 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
-        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gradient-to-r from-purple-300/10 to-pink-300/10 blur-3xl -z-10"
+        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gradient-to-r from-purple-300/20 to-pink-300/20 blur-3xl -z-10"
         animate={{
           x: [0, 30, 0],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.4, 0.6, 0.4],
         }}
         transition={{ duration: 15, repeat: Infinity }}
       />
       <motion.div 
-        className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-gradient-to-r from-blue-300/10 to-cyan-300/10 blur-3xl -z-10"
+        className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-gradient-to-r from-blue-300/20 to-cyan-300/20 blur-3xl -z-10"
         animate={{
           x: [0, -30, 0],
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 20, repeat: Infinity, delay: 5 }}
       />
@@ -186,7 +186,7 @@ const ProjectsPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A selection of my Android development work showcasing different skills and technologies
+            A selection of my work in AI/ML, AR development, and tech solutions
           </motion.p>
         </motion.div>
         
