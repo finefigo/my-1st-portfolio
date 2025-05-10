@@ -47,30 +47,60 @@ const Hero = ({
     }
   };
 
+  const floatingShapesVariants = {
+    animate: {
+      y: [0, -15, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: "reverse" as const
+      }
+    }
+  };
+
   return (
     <section className={cn("relative min-h-[90vh] flex items-center justify-center text-center px-4 overflow-hidden", className)}>
-      {/* Colorful gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-slate-950 dark:via-slate-900 dark:to-purple-900"></div>
+      {/* Enhanced colorful gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-400 via-blue-300 to-pink-400 dark:from-purple-900 dark:via-blue-800 dark:to-pink-900"></div>
       
-      {/* Animated background shapes */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Animated floating shapes */}
+      <div className="absolute inset-0 -z-5 overflow-hidden">
         <motion.div 
           initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.2 }}
+          animate={{ x: 0, opacity: 0.6 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute top-[10%] left-[10%] w-64 h-64 rounded-full bg-purple-300/30 blur-3xl"
+          className="absolute top-[10%] left-[10%] w-64 h-64 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 blur-3xl"
         />
         <motion.div 
           initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.2 }}
+          animate={{ x: 0, opacity: 0.6 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-blue-300/30 blur-3xl"
+          className="absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 blur-3xl"
         />
         <motion.div 
           initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 0.2 }}
+          animate={{ y: 0, opacity: 0.6 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="absolute bottom-[20%] left-[20%] w-72 h-72 rounded-full bg-pink-300/30 blur-3xl"
+          className="absolute bottom-[20%] left-[20%] w-72 h-72 rounded-full bg-gradient-to-r from-pink-500 to-rose-400 blur-3xl"
+        />
+        
+        {/* Additional floating colored shapes */}
+        <motion.div 
+          variants={floatingShapesVariants}
+          animate="animate"
+          className="absolute top-[15%] right-[20%] w-32 h-32 rounded-full bg-gradient-to-r from-yellow-400 to-amber-300 opacity-30 blur-2xl"
+        />
+        <motion.div 
+          variants={floatingShapesVariants}
+          animate="animate"
+          transition={{ delay: 1 }}
+          className="absolute top-[60%] right-[30%] w-24 h-24 rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 opacity-30 blur-2xl"
+        />
+        <motion.div 
+          variants={floatingShapesVariants}
+          animate="animate"
+          transition={{ delay: 1.5 }}
+          className="absolute top-[40%] left-[15%] w-36 h-36 rounded-full bg-gradient-to-r from-red-400 to-orange-300 opacity-30 blur-2xl"
         />
       </div>
 
@@ -84,11 +114,11 @@ const Hero = ({
         >
           {/* Badge */}
           <motion.div 
-            className="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-sm font-medium mb-6 dark:bg-indigo-900/50 dark:text-indigo-300"
+            className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium mb-6"
             variants={itemVariants}
           >
             <div className="flex items-center gap-2">
-              <Star size={14} className="animate-pulse-slow" />
+              <Star size={14} className="text-yellow-300 animate-pulse" />
               <span>2nd year Engineering Student</span>
             </div>
           </motion.div>
@@ -98,12 +128,12 @@ const Hero = ({
             className="text-4xl md:text-6xl font-display font-bold leading-tight text-left"
             variants={itemVariants}
           >
-            Creating <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-text-gradient">intuitive</span> mobile experiences
+            Creating <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-text-gradient font-extrabold">intuitive</span> mobile experiences
           </motion.h1>
           
           {/* Description */}
           <motion.p 
-            className="text-xl text-muted-foreground max-w-2xl text-left"
+            className="text-xl text-white/90 dark:text-white/80 max-w-2xl text-left"
             variants={itemVariants}
           >
             Beginner Android developer specializing in XML, Java, and Kotlin.
@@ -115,64 +145,120 @@ const Hero = ({
             className="flex flex-col sm:flex-row items-start gap-4 pt-6"
             variants={itemVariants}
           >
-            <Link 
-              to="/projects" 
-              className="px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              View Projects
-              <ArrowRight size={16} />
-            </Link>
+              <Link 
+                to="/projects" 
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white font-medium flex items-center gap-2 transition-all hover:opacity-90 transform hover:translate-y-[-2px] shadow-lg shadow-indigo-500/30"
+              >
+                View Projects
+                <ArrowRight size={16} />
+              </Link>
+            </motion.div>
             
-            <Link 
-              to="/about" 
-              className="px-8 py-3 rounded-lg border border-input bg-background/50 backdrop-blur-sm hover:bg-secondary/50 font-medium transition-all transform hover:translate-y-[-2px]"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              About Me
-            </Link>
+              <Link 
+                to="/about" 
+                className="px-8 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white/20 font-medium transition-all text-white transform hover:translate-y-[-2px]"
+              >
+                About Me
+              </Link>
+            </motion.div>
           </motion.div>
           
-          {/* Stats section */}
+          {/* Stats section with more colorful design */}
           <motion.div 
             className="flex flex-wrap gap-8 mt-12"
             variants={itemVariants}
           >
-            <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-white/10 backdrop-blur-sm shadow-sm">
-              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">10+</div>
-              <div className="text-sm text-muted-foreground">Projects</div>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-white/10 backdrop-blur-sm shadow-sm">
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">2</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-white/10 backdrop-blur-sm shadow-sm">
-              <div className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">3</div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
-            </div>
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+            >
+              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">10+</div>
+              <div className="text-sm text-white/80">Projects</div>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+            >
+              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">2</div>
+              <div className="text-sm text-white/80">Years Experience</div>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="text-center p-4 rounded-lg bg-gradient-to-br from-pink-500/20 to-red-800/20 backdrop-blur-md border border-white/20 shadow-xl"
+            >
+              <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">3</div>
+              <div className="text-sm text-white/80">Technologies</div>
+            </motion.div>
           </motion.div>
         </motion.div>
         
-        {/* Hero Image */}
+        {/* Hero Image with enhanced animation */}
         <motion.div 
           className="order-1 md:order-2 flex justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-pink-500/20 rounded-full blur-2xl transform scale-110"></div>
-            <img 
-              src="/lovable-uploads/e9850768-e314-49a4-b6ee-3459f0915cb5.png" 
-              alt="Developer Portrait" 
-              className="relative z-10 w-80 h-80 object-cover rounded-2xl shadow-xl border-4 border-white/20"
-            />
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-pink-500/50 rounded-full blur-3xl transform scale-110"
+              animate={{
+                scale: [1.1, 1.2, 1.1],
+                opacity: [0.5, 0.7, 0.5],
+              }}
+              transition={{ duration: 8, repeat: Infinity }}
+            ></motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img 
+                src="/lovable-uploads/e9850768-e314-49a4-b6ee-3459f0915cb5.png" 
+                alt="Developer Portrait" 
+                className="relative z-10 w-80 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white/20"
+              />
+            </motion.div>
+            
+            {/* Decorative elements around the image */}
+            <motion.div 
+              className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 z-20"
+              animate={{ 
+                y: [0, -10, 0],
+                x: [0, 5, 0]
+              }}
+              transition={{ duration: 4, repeat: Infinity }}
+            ></motion.div>
+            
+            <motion.div 
+              className="absolute -bottom-2 -left-4 w-6 h-6 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 z-20"
+              animate={{ 
+                y: [0, 10, 0],
+                x: [0, -5, 0]
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+            ></motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <motion.button 
         onClick={scrollToAbout} 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full bg-white/30 dark:bg-white/10 shadow-md backdrop-blur-sm hover:bg-white/50 transition-colors" 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-colors shadow-lg" 
         aria-label="Scroll to about section"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -180,7 +266,7 @@ const Hero = ({
         whileHover={{ y: -5 }}
         whileTap={{ scale: 0.95 }}
       >
-        <ChevronDown size={24} className="text-foreground/80" />
+        <ChevronDown size={24} className="text-white animate-bounce" />
       </motion.button>
     </section>
   );
