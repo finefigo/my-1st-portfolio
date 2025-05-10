@@ -102,7 +102,7 @@
   }
   
   .title-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
   }
   
   .animate-on-scroll {
@@ -114,12 +114,12 @@
   }
   
   .highlight-card {
-    @apply relative overflow-hidden rounded-2xl p-6 border transition-all duration-300;
+    @apply relative overflow-hidden rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg;
   }
   
   .highlight-card::before {
     content: "";
-    @apply absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/10 opacity-0 transition-opacity duration-300;
   }
   
   .highlight-card:hover::before {
@@ -132,7 +132,7 @@
   
   .nav-item::after {
     content: "";
-    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out;
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300 ease-out;
   }
   
   .nav-item:hover::after {
@@ -149,6 +149,15 @@
   
   .code-block {
     @apply bg-secondary/50 p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+  
+  .gradient-border {
+    @apply relative rounded-lg p-[1px] overflow-hidden;
+    background: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899);
+  }
+  
+  .gradient-border-content {
+    @apply bg-background dark:bg-card rounded-lg p-6 h-full;
   }
 }
 
@@ -170,6 +179,7 @@
 }
 
 .animate-text-gradient {
+  background-image: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899, #6366f1);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -185,3 +195,33 @@
     background-position: 200% 0;
   }
 }
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rotate-slow {
+  animation: rotateSlow 15s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
