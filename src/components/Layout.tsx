@@ -82,17 +82,13 @@ const Layout = ({
     };
   }, [location.pathname]);
 
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
       <header className={cn("fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300", 
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
+        scrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm" : "bg-transparent")}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center overflow-hidden animate-pulse-slow">
-              <div className="w-9 h-9 rounded-full bg-background flex items-center justify-center">
-                <span className="font-display font-bold text-lg text-gray-900">FI</span>
-              </div>
-            </div>
-            <span className="font-display font-bold text-xl">Faisal Imtiaz</span>
+            <span className="font-display font-bold text-xl text-gray-900 dark:text-white">Faisal Imtiaz</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -119,7 +115,8 @@ const Layout = ({
       </header>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && <div className="fixed inset-0 z-40 bg-background pt-20 animate-fade-in">
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-white dark:bg-gray-950 pt-20 animate-fade-in">
           <nav className="container mx-auto px-4 flex flex-col gap-4">
             <NavItem icon={<Home size={18} />} label="Home" href="/" isActive={location.pathname === '/'} />
             <NavItem icon={<User size={18} />} label="About" href="/about" isActive={location.pathname === '/about'} />
@@ -133,13 +130,14 @@ const Layout = ({
               <SocialLink href="mailto:imtiazfaisal2005@gmail.com" icon={<Mail size={20} />} label="imtiazfaisal2005@gmail.com" />
             </div>
           </nav>
-        </div>}
+        </div>
+      )}
 
       <main className="flex-1 pt-24">
         {children}
       </main>
 
-      <footer className="py-8 border-t bg-gradient-to-b from-transparent to-purple-50/30 dark:to-indigo-950/30">
+      <footer className="py-8 border-t bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
@@ -158,7 +156,8 @@ const Layout = ({
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 
 export default Layout;
